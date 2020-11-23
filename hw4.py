@@ -51,7 +51,7 @@ trainErr = labelsAndPreds.filter(lambda point: point[0] != point[1]).count() / f
 # Print some stuff
 print("Training Error = " + str(trainErr))
 
-model = logisticRegression(0.01, 0)
+model = logisticRegression(1, 4)
 model.train(parsedData)
 labelsAndPreds = parsedData.map(lambda point: (point.label, 
                                 model.predict(point.features)))

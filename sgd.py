@@ -4,12 +4,12 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 class logisticRegression():
-    def __init__(self, lr, d, reg=0.01):
+    def __init__(self, lr, d, reg=0):
         self.w = np.zeros(d)
         self.lr = lr
         self.reg = reg
     
-    def train(self, rdd, iteration=10000):
+    def train(self, rdd, iteration=100):
         N = rdd.count()
         it = 0
         # loss = rdd.map(lambda point: np.log(1 + np.exp(-point.label * np.dot(point.features, self.w)))).sum() / N
